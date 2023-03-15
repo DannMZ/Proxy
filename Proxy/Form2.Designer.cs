@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -36,7 +37,7 @@
             // 
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1 });
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
@@ -44,6 +45,12 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(800, 450);
             dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Column1";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Form2
             // 
@@ -55,6 +62,7 @@
             Text = "Game";
             FormClosing += Form2_FormClosing;
             Load += Form2_Load;
+            MouseEnter += Form2_MouseEnter;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -62,5 +70,6 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
     }
 }

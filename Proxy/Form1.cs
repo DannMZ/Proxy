@@ -28,7 +28,7 @@ namespace Proxy
                     MathF.Abs(Int32.Parse(textBox3.Text)* Int32.Parse(textBox3.Text))<
                     MathF.Abs(Int32.Parse(textBox2.Text)* Int32.Parse(textBox1.Text))/5)
                 {
-                    f2 = new Form2(new Point(Math.Abs(Int32.Parse(textBox2.Text)), Math.Abs(Int32.Parse(textBox2.Text)) ), Math.Abs(Int32.Parse(textBox3.Text)),this);
+                    f2 = new Form2(new Point(Math.Abs(Int32.Parse(textBox1.Text)), Math.Abs(Int32.Parse(textBox2.Text)) ), Math.Abs(Int32.Parse(textBox3.Text)),this);
                     f2.Show();
                     this.Visible = false;
                 }

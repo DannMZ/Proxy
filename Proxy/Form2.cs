@@ -32,21 +32,15 @@ namespace Proxy
         {
             int a = 0;
             a = 1;
-            for (int i = 0; dataGridView1.ColumnCount < grid_size.X; i++)
-            {
-                dataGridView1.Columns.Add("Column" + i.ToString(), i.ToString());
-            }
-            for (int i = 0; dataGridView1.RowCount < grid_size.Y; i++)
-            {
-                dataGridView1.Rows.Add("Row" + i.ToString(), i.ToString());
-            }
-            dataGridView1.AutoResizeColumnHeadersHeight();
+
+            // for (int i = 0; i < grid_size.X; i++){dataGridView1.Columns.Add("Column" + i.ToString(), i.ToString());}dataGridView1.Rows.Add(grid_size.Y);
+            dataGridView1.Columns.Add(new DataGridViewColumn());
+            // dataGridView1.AutoResizeColumnHeadersHeight(); dataGridView1.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
 
             // Resize all the row heights to fit the contents of all non-header cells.
-            dataGridView1.AutoResizeRows(
-                DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
 
-            //dataGridView1.ColumnCount = grid_size.X;dataGridView1.RowCount = grid_size.Y;
+
+            dataGridView1.ColumnCount = grid_size.X; dataGridView1.RowCount = grid_size.Y;
             // Set the MaximizeBox to false to remove the maximize box.
             this.MaximizeBox = false;
 
@@ -64,6 +58,11 @@ namespace Proxy
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             parr.Close();
+        }
+
+        private void Form2_MouseEnter(object sender, EventArgs e)
+        {
+
         }
     }
 }
