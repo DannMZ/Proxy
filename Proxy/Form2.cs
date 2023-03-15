@@ -24,17 +24,15 @@ namespace Proxy
             InitializeComponent();
             grid_size = new Point(grid.X, grid.Y);
             Game_ = new ProxyDeminer(grid, mines_in_game);
-            dataGridView1 = new DataGridView();
+
             parr = Parent;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            int a = 0;
-            a = 1;
 
-            // for (int i = 0; i < grid_size.X; i++){dataGridView1.Columns.Add("Column" + i.ToString(), i.ToString());}dataGridView1.Rows.Add(grid_size.Y);
-            dataGridView1.Columns.Add(new DataGridViewColumn());
+            // for (int i = 0; dataGridView1.ColumnCount < grid_size.X; i++){dataGridView1.Columns.Add("Column" + i.ToString(), i.ToString());}dataGridView1.Rows.Add(grid_size.Y);
+            // dataGridView1.Columns.Add(new DataGridViewColumn());
             // dataGridView1.AutoResizeColumnHeadersHeight(); dataGridView1.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
 
             // Resize all the row heights to fit the contents of all non-header cells.
@@ -50,9 +48,6 @@ namespace Proxy
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*dataGridView1[dataGridView1.SelectedCells][dataGridView1.SelectedColumns] =
-                Game_.demine(new Point(dataGridView1.SelectedCells, dataGridView1.SelectedColumns));*/
-            MessageBox.Show("a");
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
@@ -63,6 +58,15 @@ namespace Proxy
         private void Form2_MouseEnter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            dataGridView1.Rows[dataGridView1.CurrentCellAddress.Y].Cells[dataGridView1.CurrentCellAddress.X].Value =
+                Game_.demine(dataGridView1.CurrentCellAddress);
+            int a = 0;
+            a = 1;
         }
     }
 }

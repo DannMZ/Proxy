@@ -19,6 +19,7 @@ namespace Proxy
         public deminer(Point point,int mines_count) {
         Size = point;
             mines_at_all = mines_count;
+            Set_Mines();
         }
         public string demine(Point point)
         {
@@ -39,26 +40,52 @@ namespace Proxy
             while (mines_in_game < mines_at_all)
             {
                 Random random = new Random();
-                Point point_of_mine = new Point(random.Next(), random.Next());
+                Point point_of_mine = new Point(random.Next(Size.X), random.Next(Size.Y));
                 if (board[point_of_mine.X][point_of_mine.Y] != '*')
                 {
                     board[point_of_mine.X][point_of_mine.Y] = '*';
-
-                    if (point_of_mine.X != 0)
-                    {
-                        board[point_of_mine.X - 1][point_of_mine.Y] = Convert.ToChar(board[point_of_mine.X - 1][point_of_mine.Y] + 1);
+                    {//cross
+                        if (point_of_mine.X != 0)
+                        {
+                            board[point_of_mine.X - 1][point_of_mine.Y] = Convert.ToChar(board[point_of_mine.X - 1][point_of_mine.Y] + 1);
+                        }
+                        if (point_of_mine.X != Size.X - 1)
+                        {
+                            board[point_of_mine.X + 1][point_of_mine.Y] = Convert.ToChar(board[point_of_mine.X + 1][point_of_mine.Y] + 1);
+                        }
+                        if (point_of_mine.Y != 0)
+                        {
+                            board[point_of_mine.X][point_of_mine.Y + -1] = Convert.ToChar(board[point_of_mine.X][point_of_mine.Y - 1] + 1);
+                        }
+                        if (point_of_mine.Y != Size.Y - 1)
+                        {
+                            board[point_of_mine.X][point_of_mine.Y + 1] = Convert.ToChar(board[point_of_mine.X][point_of_mine.Y + 1] + 1);
+                        }
                     }
-                    if (point_of_mine.X != Size.X)
-                    {
-                        board[point_of_mine.X + 1][point_of_mine.Y] = Convert.ToChar(board[point_of_mine.X + 1][point_of_mine.Y] + 1);
-                    }
-                    if (point_of_mine.Y != 0)
-                    {
-                        board[point_of_mine.X][point_of_mine.Y+-1] = Convert.ToChar(board[point_of_mine.X][point_of_mine.Y-1] + 1);
-                    }
-                    if (point_of_mine.Y != Size.Y)
-                    {
-                        board[point_of_mine.X][point_of_mine.Y+1] = Convert.ToChar(board[point_of_mine.X][point_of_mine.Y+1] + 1);
+                    {//diagonals
+                        if (point_of_mine.X != 0)
+                        {
+                            if (point_of_mine.Y != 0)
+                            {
+                                board[point_of_mine.X-1][point_of_mine.Y  -1] = Convert.ToChar(board[point_of_mine.X - 1][point_of_mine.Y - 1] + 1);
+                            }
+                            if (point_of_mine.Y != Size.Y - 1)
+                            {
+                                board[point_of_mine.X-1][point_of_mine.Y + 1] = Convert.ToChar(board[point_of_mine.X - 1][point_of_mine.Y + 1] + 1);
+                            }
+                        }
+                        if (point_of_mine.X != Size.X - 1)
+                        {
+                            if (point_of_mine.Y != 0)
+                            {
+                                board[point_of_mine.X+1][point_of_mine.Y  -1] = Convert.ToChar(board[point_of_mine.X+1][point_of_mine.Y - 1] + 1);
+                            }
+                            if (point_of_mine.Y != Size.Y - 1)
+                            {
+                                board[point_of_mine.X+1][point_of_mine.Y + 1] = Convert.ToChar(board[point_of_mine.X+1][point_of_mine.Y + 1] + 1);
+                            }
+                        }
+                      
                     }
                     mines_in_game++;
                 }
