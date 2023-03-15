@@ -4,7 +4,6 @@ F:\Lab\labs\Proxy\Proxy\bin\Debug\net6.0-windows\Proxy.runtimeconfig.json
 F:\Lab\labs\Proxy\Proxy\bin\Debug\net6.0-windows\Proxy.dll
 F:\Lab\labs\Proxy\Proxy\bin\Debug\net6.0-windows\Proxy.pdb
 F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.csproj.AssemblyReference.cache
-F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.Form1.resources
 F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.csproj.GenerateResource.cache
 F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.GeneratedMSBuildEditorConfig.editorconfig
 F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.AssemblyInfoInputs.cache
@@ -15,3 +14,5 @@ F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\refint\Proxy.dll
 F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.pdb
 F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.genruntimeconfig.cache
 F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\ref\Proxy.dll
+F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.Start.resources
+F:\Lab\labs\Proxy\Proxy\obj\Debug\net6.0-windows\Proxy.Form2.resources
